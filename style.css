@@ -5,7 +5,7 @@
 
 .main {
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.5) 50%), url('assets/background_1.jpg');
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%), url('assets/background_1.jpg');
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -24,11 +24,9 @@
 }
 
 .logo {
-  color: #020da5;
-  font-size: 35px;
-  font-family: Arial, sans-serif;
+  width: 150px;
+  height: auto;
   padding-left: 20px;
-  float: left;
   padding-top: 10px;
 }
 
