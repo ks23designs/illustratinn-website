@@ -1,95 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illustratinn | Creative Visual Design</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
-  <style>
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
+import React from 'react';
 
-    nav .logo img {
-      height: 60px;
-      width: auto;
-      object-fit: contain;
-    }
+const Home = () => (
+  <div className="text-center p-10">
+    <h1 className="text-4xl font-bold">Welcome to Illustratinn</h1>
+    <p className="text-xl mt-4">Creative Visual Design and Animated Storytelling</p>
+  </div>
+);
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+const About = () => (
+  <div className="text-center p-10">
+    <h2 className="text-3xl font-bold">About Me</h2>
+    <p className="mt-4">Here are my details...</p>
+  </div>
+);
 
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <!-- Logo on the left side -->
-    <div class="logo">
-      <img src="/assets/logo.png" alt="Illustratinn Logo"> <!-- Make sure this path is correct -->
-    </div>
-
-    <!-- Menu options on the right side -->
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#work">My Work</a></li>
-      <li><a href="#contact">Contact</a></li>
+const Work = () => (
+  <div className="text-center p-10">
+    <h2 className="text-3xl font-bold">My Work</h2>
+    <ul className="mt-4">
+      <li><a href="/work/for-kids">For Kids</a></li>
+      <li><a href="/work/graphic-design">Graphic Design</a></li>
+      <li><a href="/work/animation">Animation</a></li>
+      <li><a href="/work/blog">My Blog</a></li>
     </ul>
-  </nav>
+  </div>
+);
 
-  <section id="hero">
-    <h1>Welcome to Illustratinn</h1>
-    <p>Creative Visual Design and Animated Storytelling</p>
-    <div id="hero-animation"></div>
-  </section>
+const ForKids = () => (
+  <div className="text-center p-10">
+    <h2 className="text-3xl font-bold">For Kids</h2>
+    <ul className="mt-4">
+      <li><a href="/assets/Kids%20PDF%201.pdf" target="_blank">Kids PDF 1</a></li>
+      <li><a href="/assets/Kids%20PDF%202.pdf" target="_blank">Kids PDF 2</a></li>
+    </ul>
+  </div>
+);
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I’m Kishan Kumar Singh — A Senior Visual Designer. I bring creative ideas to life through Design, Motion graphics, and Storytelling.</p>
-  </section>
+const Contact = () => (
+  <div className="text-center p-10">
+    <h2 className="text-3xl font-bold">Contact Me</h2>
+    <p className="mt-4">Phone: +91-XXXXXXXXXX</p>
+    <p>Email: ks23.designs@gmail.com</p>
+  </div>
+);
 
-  <section id="work">
-    <h2>My Work</h2>
-    <div class="project">
-      <h3>Hindalco and Birla Copper</h3>
-      <p>Created engaging animated and technical content for Hindalco and Birla Copper.</p>
-    </div>
-    <div class="project">
-      <h3>Zepto E-learning Modules</h3>
-      <p>Designed and developed microlearning content and animations for Zepto’s training programs.</p>
-    </div>
-  </section>
+const App = () => (
+  <div>
+    <Home />
+    <About />
+    <Work />
+    <Contact />
+  </div>
+);
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:ks23.designs@gmail.com">ks23.designs@gmail.com</a></p>
-    <p>Portfolio: <a href="https://illustratinn.com" target="_blank">illustratinn.com</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Illustratinn. All rights reserved.</p>
-  </footer>
-
-  <script>
-    lottie.loadAnimation({
-      container: document.getElementById('hero-animation'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/assets/hero-animation.json' // Ensure this path matches your repo
-    });
-  </script>
-</body>
-</html>
+export default App;
