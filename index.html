@@ -3,37 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Illustratinn | Creative Visual Design</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#work">My Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <h1>Welcome to Illustratinn</h1>
+    <p>Creative Visual Design and Animated Storytelling</p>
+    <div id="hero-animation"></div>
+  </section>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi, I'm Kishan Kumar Singh — a Visual Designer and Content Developer with a passion for creating stunning and impactful designs.</p>
+    <p>Hi, I’m Kishan Kumar Singh — a Senior Visual Designer and Visual Content Developer. I bring creative ideas to life through design, motion graphics, and storytelling.</p>
   </section>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <ul>
-      <li>Zepto Motion Graphics</li>
-      <li>FinBox Visual Design</li>
-      <li>Drilling and Blasting Training Modules</li>
-    </ul>
+  <section id="work">
+    <h2>My Work</h2>
+    <div class="project">
+      <h3>FinBox Motion Graphics</h3>
+      <p>Created engaging animated content for their credit infrastructure product suite.</p>
+    </div>
+    <div class="project">
+      <h3>Zepto E-learning Modules</h3>
+      <p>Designed and developed microlearning content and animations for Zepto’s training programs.</p>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out at: <a href="mailto:ks23.designs@gmail.com">ks23.designs@gmail.com</a></p>
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:ks23.designs@gmail.com">ks23.designs@gmail.com</a></p>
+    <p>Portfolio: <a href="https://illustratinn.com" target="_blank">illustratinn.com</a></p>
   </section>
+
+  <footer>
+    <p>&copy; 2025 Illustratinn. All rights reserved.</p>
+  </footer>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('hero-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/assets/hero-animation.json' // Ensure this path matches your repo
+    });
+  </script>
 </body>
 </html>
+
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background: #333;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+section {
+  padding: 50px 20px;
+}
+
+.project {
+  background: #eee;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+}
