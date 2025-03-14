@@ -6,9 +6,39 @@
   <title>Illustratinn | Creative Visual Design</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    nav .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <nav>
+    <!-- Logo on the left side -->
+    <div class="logo">
+      <img src="/assets/logo.png" alt="Illustratinn Logo"> <!-- Make sure this path is correct -->
+    </div>
+
+    <!-- Menu options on the right side -->
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About Me</a></li>
