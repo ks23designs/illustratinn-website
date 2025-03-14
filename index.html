@@ -1,63 +1,55 @@
 import React from 'react';
 
 const Header = () => (
-  <div className="flex justify-between items-center p-4">
-    <h1 className="text-4xl font-bold">Illustratinn</h1>
+  <div className="bg-gray-900 text-white flex justify-between items-center p-4">
+    <div className="flex items-center space-x-8">
+      <h1 className="text-4xl font-bold">Illustratinn</h1>
+      <nav className="space-x-6">
+        <a href="#" className="text-lg">Home</a>
+        <a href="#" className="text-lg">Work</a>
+        <a href="#" className="text-lg">About</a>
+        <a href="#" className="text-lg">Contact</a>
+      </nav>
+    </div>
     <img src="/assets/logo.png" alt="Illustratinn Logo" className="h-12" />
   </div>
 );
 
-const Home = () => (
-  <div className="text-center p-10">
-    <h1 className="text-4xl font-bold">Welcome to Illustratinn</h1>
-    <p className="text-xl mt-4">Creative Visual Design and Animated Storytelling</p>
+const MainBanner = () => (
+  <div className="bg-purple-600 text-white text-center p-20">
+    <img src="/assets/placeholder.gif" alt="Illustratinn Banner" className="mx-auto w-1/2" />
   </div>
 );
 
-const About = () => (
-  <div className="text-center p-10">
-    <h2 className="text-3xl font-bold">About Me</h2>
-    <p className="mt-4">Here are my details...</p>
-  </div>
-);
-
-const Work = () => (
-  <div className="text-center p-10">
-    <h2 className="text-3xl font-bold">My Work</h2>
-    <ul className="mt-4">
-      <li><a href="/work/for-kids">For Kids</a></li>
-      <li><a href="/work/graphic-design">Graphic Design</a></li>
-      <li><a href="/work/animation">Animation</a></li>
-      <li><a href="/work/blog">My Blog</a></li>
-    </ul>
-  </div>
-);
-
-const ForKids = () => (
-  <div className="text-center p-10">
-    <h2 className="text-3xl font-bold">For Kids</h2>
-    <ul className="mt-4">
-      <li><a href="/assets/Kids%20PDF%201.pdf" target="_blank">Kids PDF 1</a></li>
-      <li><a href="/assets/Kids%20PDF%202.pdf" target="_blank">Kids PDF 2</a></li>
-    </ul>
-  </div>
-);
-
-const Contact = () => (
-  <div className="text-center p-10">
-    <h2 className="text-3xl font-bold">Contact Me</h2>
-    <p className="mt-4">Phone: +91-XXXXXXXXXX</p>
-    <p>Email: ks23.designs@gmail.com</p>
+const ContentBlocks = () => (
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-10">
+    <div className="bg-pink-400 text-white p-10 text-center rounded-2xl">
+      <h2 className="text-5xl font-bold">Graphic Design</h2>
+    </div>
+    <div className="bg-purple-400 text-white p-10 text-center rounded-2xl">
+      <h2 className="text-5xl font-bold">Animation</h2>
+    </div>
+    <div className="bg-yellow-400 text-white p-10 text-center rounded-2xl">
+      <h2 className="text-5xl font-bold">For Kids</h2>
+      <ul className="mt-4">
+        <li><a href="/assets/Kids%20PDF%201.pdf" target="_blank" className="underline">Kids PDF 1</a></li>
+        <li><a href="/assets/Kids%20PDF%202.pdf" target="_blank" className="underline">Kids PDF 2</a></li>
+      </ul>
+    </div>
+    <div className="bg-blue-400 text-white p-10 text-center rounded-2xl">
+      <h2 className="text-5xl font-bold">Blogs/Newsletters</h2>
+    </div>
+    <div className="bg-green-400 text-white p-10 text-center rounded-2xl">
+      <h2 className="text-5xl font-bold">Illustrations</h2>
+    </div>
   </div>
 );
 
 const App = () => (
-  <div>
+  <div className="font-[Inter]">
     <Header />
-    <Home />
-    <About />
-    <Work />
-    <Contact />
+    <MainBanner />
+    <ContentBlocks />
   </div>
 );
 
