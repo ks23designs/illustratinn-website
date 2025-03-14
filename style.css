@@ -24,10 +24,11 @@
 }
 
 .logo {
-  width: 150px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
   height: auto;
-  padding-left: 20px;
-  padding-top: 10px;
 }
 
 .menu {
