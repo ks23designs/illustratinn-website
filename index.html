@@ -1,56 +1,26 @@
-import React from 'react';
-
-const Header = () => (
-  <div className="bg-gray-900 text-white flex justify-between items-center p-4">
-    <div className="flex items-center space-x-8">
-      <h1 className="text-4xl font-bold">Illustratinn</h1>
-      <nav className="space-x-6">
-        <a href="#" className="text-lg">Home</a>
-        <a href="#" className="text-lg">Work</a>
-        <a href="#" className="text-lg">About</a>
-        <a href="#" className="text-lg">Contact</a>
-      </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>illustratinn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    div class="navbar">
+    <div class="icon">
+      <h2>class="logo">illustratinn</h2>
     </div>
-    <img src="/assets/logo.png" alt="Illustratinn Logo" className="h-12" />
-  </div>
-);
 
-const MainBanner = () => (
-  <div className="bg-purple-600 text-white text-center p-20">
-    <img src="/assets/placeholder.gif" alt="Illustratinn Banner" className="mx-auto w-1/2" />
-  </div>
-);
-
-const ContentBlocks = () => (
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-10">
-    <div className="bg-pink-400 text-white p-10 text-center rounded-2xl">
-      <h2 className="text-5xl font-bold">Graphic Design</h2>
-    </div>
-    <div className="bg-purple-400 text-white p-10 text-center rounded-2xl">
-      <h2 className="text-5xl font-bold">Animation</h2>
-    </div>
-    <div className="bg-yellow-400 text-white p-10 text-center rounded-2xl">
-      <h2 className="text-5xl font-bold">For Kids</h2>
-      <ul className="mt-4">
-        <li><a href="/assets/Kids%20PDF%201.pdf" target="_blank" className="underline">Kids PDF 1</a></li>
-        <li><a href="/assets/Kids%20PDF%202.pdf" target="_blank" className="underline">Kids PDF 2</a></li>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a><a</li>
+        <li><a href="#">About</a><a</li>
+        <li><a href="#">My Work</a><a</li>
+        <li><a href="#">Blog</a><a</li>
+        <li><a href="#">Contact</a><a</li>
       </ul>
-    </div>
-    <div className="bg-blue-400 text-white p-10 text-center rounded-2xl">
-      <h2 className="text-5xl font-bold">Blogs/Newsletters</h2>
-    </div>
-    <div className="bg-green-400 text-white p-10 text-center rounded-2xl">
-      <h2 className="text-5xl font-bold">Illustrations</h2>
-    </div>
   </div>
-);
-
-const App = () => (
-  <div className="font-[Inter]">
-    <Header />
-    <MainBanner />
-    <ContentBlocks />
   </div>
-);
-
-export default App;
+  </div>
+</body>
+</html>
