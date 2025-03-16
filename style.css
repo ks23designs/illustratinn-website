@@ -42,23 +42,23 @@ body {
 
 /* Logo styling */
 .icon {
-    width: 200px;
+    width: 100px;
     float: left;
-    height: 70px;
+    height: 35px;
 }
 
 .logo {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 80px;
+    top: 15px;
+    left: 15px;
+    width: 50px;
     height: auto;
 }
 
 /* Navigation links */
 .menu {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 ul {
@@ -70,7 +70,7 @@ ul {
 ul li {
     list-style: none;
     margin-left: 40px; /* Adjusted for better spacing */
-    font-size: 15px;
+    font-size: 10px;
 }
 
 /* Navigation link styles */
@@ -78,7 +78,7 @@ ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 12px;  /* Increased text size */
+    font-size: 8px;  /* Increased text size */
     background-color: #FFFFFF;
     padding: 10px 15px;  /* Adjusted padding */
     border-radius: 25px;
@@ -90,7 +90,7 @@ ul li a {
 /* Hover effect */
 ul li a:hover {
     color: white;
-    background-color: #FED33E;
+    background-color: #FFFF54;
     transform: scale(1.1); /* Fix: Only scaling */
     box-shadow: 0px 0px 10px 3px rgba(254, 211, 62, 0.9); /* Keeps glow */
     transition: all 0.3s ease-in-out;
@@ -115,12 +115,12 @@ ul li a:hover {
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        top: 10px;
+        top: 15px;
     }
 
     ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
     ul li {
@@ -128,14 +128,14 @@ ul li a:hover {
     }
 
     ul li a {
-        font-size: 14px;
+        font-size: 10px;
         padding: 8px 12px;
     }
 
     /* Adjust subtext for mobile */
     .container p {
         max-width: 90%;
-        font-size: 16px;
+        font-size: 10px;
         line-height: 1.5;
     }
 }
