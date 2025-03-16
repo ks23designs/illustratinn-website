@@ -28,6 +28,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    top: 20px;  /* Equal spacing from top */
+    right: 20px; /* Equal spacing from right */
 }
 
 /* Logo styling */
@@ -47,9 +50,9 @@ body {
 
 /* Navigation links */
 .menu {
-    width: 400px;
-    float: left;
-    height: 70px;
+    width: auto;
+    display: flex;
+    gap: 20px; /* Controls spacing between buttons */
 }
 
 ul {
