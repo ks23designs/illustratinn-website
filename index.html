@@ -24,12 +24,25 @@
             font-family: 'Montserrat', sans-serif;
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.4;
         }
         .background {
             width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+            z-index: 2;
         }
         nav {
             display: flex;
@@ -48,7 +61,7 @@
         .nav-links li {
             display: inline;
         }
-        .nav-links a {
+        .nav-links a, .cta-buttons .button {
             text-decoration: none;
             color: black;
             font-size: 18px;
@@ -60,12 +73,16 @@
             border: 1px solid #d1d9e6;
             box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
         }
-        .nav-links a:hover, .nav-links a.active {
-            background: white;
-            color: blue;
-            font-size: 20px;
+        .nav-links a:hover, .cta-buttons .button:hover {
+            background: black;
+            color: white;
             box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
             cursor: pointer;
+        }
+        .nav-links a.active, .cta-buttons .button.active {
+            background: white;
+            color: blue;
+            font-size: 1.2rem;
         }
         .container {
             display: flex;
@@ -89,26 +106,6 @@
             margin-top: 20px;
             display: flex;
             gap: 15px;
-        }
-        .cta-buttons .button {
-            display: inline-block;
-            background: #FED33D;
-            padding: 15px 25px;
-            border-radius: 20px;
-            font-size: 1.2rem;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border: 1px solid #d1d9e6;
-            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
-            transition: all 0.3s ease-in-out;
-        }
-        .cta-buttons .button:hover, .cta-buttons .button.active {
-            background: white;
-            color: blue;
-            font-size: 1.4rem;
-            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
-            cursor: pointer;
         }
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -134,14 +131,15 @@
     </style>
 </head>
 <body>
+    <canvas id="triangleCanvas"></canvas>
     <div id="home" class="background">
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
             <ul class="nav-links">
-                <li><a href="#home" class="nav-item">Home</a></li>
-                <li><a href="#about" class="nav-item">About Me</a></li>
-                <li><a href="#work" class="nav-item">My Work</a></li>
-                <li><a href="#contact" class="nav-item">Contact Me</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#work">My Work</a></li>
+                <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
         <div class="container">
@@ -154,12 +152,36 @@
         </div>
     </div>
     <script>
-        document.querySelectorAll('.button, .nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.button, .nav-item').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+        document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(button => {
+            button.addEventListener("click", function() {
+                document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
             });
         });
+
+        const canvas = document.getElementById("triangleCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let angle = 0;
+
+        function drawTriangle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            ctx.rotate(angle);
+            ctx.beginPath();
+            ctx.moveTo(0, -50);
+            ctx.lineTo(50, 50);
+            ctx.lineTo(-50, 50);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+            ctx.fill();
+            ctx.restore();
+            angle += 0.01;
+            requestAnimationFrame(drawTriangle);
+        }
+        drawTriangle();
     </script>
 </body>
 </html>
