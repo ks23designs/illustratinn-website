@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Illustratinn</title>
     <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
-    <!-- Google Font Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
     <style>
         * {
             margin: 0;
@@ -58,9 +56,6 @@
             display: flex;
             gap: 20px;
         }
-        .nav-links li {
-            display: inline;
-        }
         .nav-links a, .cta-buttons .button {
             text-decoration: none;
             color: black;
@@ -107,7 +102,6 @@
             display: flex;
             gap: 15px;
         }
-        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -144,7 +138,7 @@
         </nav>
         <div class="container">
             <h1>Bringing Imagination to Life with Art & Creativity</h1>
-            <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences. My work blends storytelling with design to create compelling visuals that inspire and captivate. The name "Illustratinn" comes from the idea of an "Inn"—a welcoming place where creativity and artistry come together. Explore my portfolio and let's create something extraordinary!</p>
+            <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences...</p>
             <div class="cta-buttons">
                 <a href="#work" class="button">Explore My Work</a>
                 <a href="#contact" class="button">Let's Collaborate</a>
@@ -163,38 +157,42 @@
         const ctx = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        
+
         let triangles = [];
-        for (let i = 0; i < 50; i++) {
-            triangles.push({
+        function createTriangle() {
+            return {
                 x: canvas.width / 2,
                 y: canvas.height / 2,
-                size: Math.random() * 50 + 20,
-                speedX: Math.random() * 2 - 1,
-                speedY: Math.random() * 2 - 1,
-                rotation: Math.random() * 360
+                size: Math.random() * 80 + 20,
+                speed: Math.random() * 3 + 1,
+                angle: Math.random() * 360,
+                opacity: 0.2
+            };
+        }
+        function updateTriangles() {
+            triangles.forEach((t, index) => {
+                t.x += t.speed * Math.cos(t.angle * Math.PI / 180);
+                t.y += t.speed * Math.sin(t.angle * Math.PI / 180);
+                if (t.x < 0 || t.x > canvas.width || t.y < 0 || t.y > canvas.height) {
+                    triangles[index] = createTriangle();
+                }
             });
         }
-
         function drawTriangles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             triangles.forEach(t => {
-                ctx.save();
-                ctx.translate(t.x, t.y);
-                ctx.rotate(t.rotation * Math.PI / 180);
                 ctx.beginPath();
-                ctx.moveTo(0, -t.size);
-                ctx.lineTo(t.size, t.size);
-                ctx.lineTo(-t.size, t.size);
+                ctx.moveTo(t.x, t.y - t.size);
+                ctx.lineTo(t.x + t.size, t.y + t.size);
+                ctx.lineTo(t.x - t.size, t.y + t.size);
                 ctx.closePath();
-                ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
+                ctx.fillStyle = `rgba(255, 255, 255, ${t.opacity})`;
                 ctx.fill();
-                ctx.restore();
-                t.x += t.speedX;
-                t.y += t.speedY;
             });
+            updateTriangles();
             requestAnimationFrame(drawTriangles);
         }
+        for (let i = 0; i < 50; i++) triangles.push(createTriangle());
         drawTriangles();
     </script>
 </body>
