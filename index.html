@@ -42,8 +42,7 @@
         }
         .nav-links {
             list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
             gap: 10px;
             justify-content: center;
         }
@@ -102,9 +101,8 @@
         /* Responsive Design for Mobile */
         @media (max-width: 768px) {
             .nav-links {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                flex-direction: column;
+                align-items: center;
             }
             .container {
                 height: auto;
