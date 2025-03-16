@@ -79,12 +79,13 @@ ul li a {
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    font-size: 14px;  /* Decrease text size */
     background-color: #FED33D;
-    padding: 10px 15px;
+    padding: 8px 12px;  /* Slightly smaller padding */
     border-radius: 20px;
     display: inline-block;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.9); /* Stronger glow */
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.9); /* Outer glow */
 }
 
 /* Hover effect */
