@@ -79,8 +79,8 @@ ul li a {
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 14px;  /* Decrease text size */
-    background-color: #FED33D;
+    font-size: 10px;  /* Decrease text size */
+    background-color: #FFFFFF;
     padding: 8px 12px;  /* Slightly smaller padding */
     border-radius: 20px;
     display: inline-block;
@@ -91,7 +91,7 @@ ul li a {
 /* Hover effect */
 ul li a:hover {
     color: white;
-    background-color: #BC9A2E;
+    background-color: #FED33E;
     transform: scale(1.1); /* Fix: Only scaling */
     box-shadow: none; /* Glow disappears on hover */
     transition: all 0.3s ease-in-out;
