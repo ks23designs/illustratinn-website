@@ -17,7 +17,7 @@
         }
         body {
             background: url('assets/background_1.jpg') no-repeat center center/cover;
-            min-height: 100vh; /* Allows scrolling if content overflows */
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -50,17 +50,21 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: black !important; /* Ensures text stays visible */
+            color: black;
             font-size: 18px;
             font-weight: bold;
             background-color: #FED33D;
             padding: 10px 15px;
             border-radius: 20px;
             transition: 0.4s ease-in-out;
+            border: 1px solid #d1d9e6;
+            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
         }
         .nav-links a:hover {
+            background: black;
             color: white;
-            transform: scale(1.1);
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
+            cursor: pointer;
         }
         .container {
             display: flex;
@@ -69,7 +73,7 @@
             align-items: center;
             height: 80vh;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.3); /* Lighter overlay for readability */
+            background: rgba(0, 0, 0, 0.3);
         }
         h1 {
             font-size: 3rem;
@@ -78,25 +82,31 @@
         p {
             font-size: 1.2rem;
             max-width: 600px;
-            text-align: justify; /* Improved readability */
+            text-align: justify;
         }
         .cta-buttons {
             margin-top: 20px;
+            display: flex;
+            gap: 15px;
         }
-        .cta-buttons a {
+        .cta-buttons .button {
             display: inline-block;
-            background: yellow;
+            background: #FED33D;
             padding: 15px 25px;
-            margin: 10px;
             border-radius: 20px;
             font-size: 1.2rem;
-            color: black;
+            color: white;
             font-weight: bold;
             text-decoration: none;
-            transition: 0.3s;
+            border: 1px solid #d1d9e6;
+            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+            transition: all 0.3s ease-in-out;
         }
-        .cta-buttons a:hover {
-            background: orange;
+        .cta-buttons .button:hover {
+            background: black;
+            color: white;
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
+            cursor: pointer;
         }
 
         /* Responsive Design */
@@ -123,7 +133,7 @@
     </style>
 </head>
 <body>
-    <div id="home" class="background"> <!-- Added id="home" for proper navbar scrolling -->
+    <div id="home" class="background">
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
             <ul class="nav-links">
@@ -137,8 +147,8 @@
             <h1>Bringing Imagination to Life with Art & Creativity</h1>
             <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences. My work blends storytelling with design to create compelling visuals that inspire and captivate. The name "Illustratinn" comes from the idea of an "Inn"—a welcoming place where creativity and artistry come together. Explore my portfolio and let's create something extraordinary!</p>
             <div class="cta-buttons">
-                <a href="#work">Explore My Work</a>
-                <a href="#contact">Let's Collaborate</a>
+                <a href="#work" class="button">Explore My Work</a>
+                <a href="#contact" class="button">Let's Collaborate</a>
             </div>
         </div>
     </div>
