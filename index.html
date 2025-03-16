@@ -32,27 +32,18 @@
         }
         nav {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             padding: 15px 30px;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.6);
         }
         .logo {
-            width: 100px;
-            margin-bottom: 10px;
-        }
-        .nav-container {
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
+            width: 80px;
         }
         .nav-links {
             list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            gap: 10px;
+            display: flex;
+            gap: 15px;
         }
         .nav-links a {
             text-decoration: none;
@@ -64,12 +55,8 @@
             border-radius: 20px;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);
             transition: all 0.3s ease-in-out;
-            text-align: center;
-            display: block;
-            min-width: 120px;
         }
-        .nav-links a:hover, .nav-links a:focus {
-            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+        .nav-links a:hover {
             background: white;
             color: #0F2072;
         }
@@ -89,7 +76,6 @@
         p {
             font-size: 1.2rem;
             max-width: 600px;
-            text-align: justify;
         }
         .cta-buttons {
             margin-top: 20px;
@@ -109,25 +95,26 @@
         .cta-buttons .button:hover {
             background: white;
             color: #0F2072;
-            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
         }
-        /* Responsive Design */
+        /* Responsive Design for Mobile */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            nav {
+                flex-direction: column;
+                text-align: center;
             }
-            p {
-                font-size: 1rem;
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
             }
             .container {
                 height: auto;
                 padding: 40px 20px;
             }
-            .nav-links {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-                text-align: center;
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -136,14 +123,12 @@
     <div id="home" class="background">
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
-            <div class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#work">My Work</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#work">My Work</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
         </nav>
         <div class="container">
             <h1>Bringing Imagination to Life with Art & Creativity</h1>
