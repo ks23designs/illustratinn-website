@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Illustratinn</title>
     <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
+    <!-- Google Font Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
     <style>
         * {
             margin: 0;
@@ -58,9 +60,10 @@
             border: 1px solid #d1d9e6;
             box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
         }
-        .nav-links a:hover {
-            background: black;
-            color: white;
+        .nav-links a:hover, .nav-links a.active {
+            background: white;
+            color: blue;
+            font-size: 20px;
             box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
             cursor: pointer;
         }
@@ -100,19 +103,14 @@
             box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
             transition: all 0.3s ease-in-out;
         }
-        .cta-buttons .button:hover {
-            background: black;
-            color: white;
+        .cta-buttons .button:hover, .cta-buttons .button.active {
+            background: white;
+            color: blue;
+            font-size: 1.4rem;
             box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
             cursor: pointer;
         }
-        .button.clicked {
-            background: white !important;
-            color: blue !important;
-            font-size: 1.5rem;
-            padding: 20px 30px;
-            transition: all 0.3s ease-in-out;
-        }
+        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -134,26 +132,16 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const buttons = document.querySelectorAll(".cta-buttons .button");
-            buttons.forEach(button => {
-                button.addEventListener("click", function() {
-                    this.classList.toggle("clicked");
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <div id="home" class="background">
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About Me</a></li>
+                <li><a href="#work" class="nav-item">My Work</a></li>
+                <li><a href="#contact" class="nav-item">Contact Me</a></li>
             </ul>
         </nav>
         <div class="container">
@@ -165,5 +153,13 @@
             </div>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('.button, .nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.button, .nav-item').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
