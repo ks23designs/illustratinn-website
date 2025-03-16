@@ -98,13 +98,14 @@ ul li a:hover {
 
 /* ==== Added Fix: Subtext Styling for Exactly 3 Lines ==== */
 .container p {
-    max-width: 850px; /* Restricts width to control line breaks */
-    font-size: 18px;  /* Adjusts text size for better spacing */
-    line-height: 1.4; /* Controls line height to fit within three lines */
+    max-width: 850px;
+    font-size: 17px;  /* Adjusted for better control */
+    line-height: 1.4;
+    height: 4.2em;  /* Forces exactly 3 lines */
     text-align: center;
     margin: 0 auto;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limits text to three lines */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
