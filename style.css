@@ -104,16 +104,16 @@ ul li a:active, ul li a:focus {
 
 /* ==== Added Fix: Subtext Styling for Exactly 3 Lines ==== */
 .container p {
-    max-width: 1000px;  /* Adjust width for proper alignment */
-    font-size: 14px;  /* Adjust font size for better readability */
-    line-height: 1.5;  /* Maintain good spacing between lines */
-    height: 4.5em;  /* Ensures only 3 lines (1.5 * 3 = 4.5em) */
-    overflow: hidden;  /* Hide extra text */
+    max-width: 500px;  /* Adjusted width for better control */
+    font-size: 14px;
+    line-height: 1.5;  /* Each line is 1.5em tall */
+    height: 4.5em;  /* Exactly 3 lines (1.5em * 3) */
+    overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;  /* Limit to 3 lines */
+    -webkit-line-clamp: 3;  /* Restrict to 3 lines */
     -webkit-box-orient: vertical;
-    text-overflow: ellipsis;  /* Adds "..." for overflowed text */
-    white-space: nowrap;  /* Ensures strict line control */
+    text-overflow: ellipsis;  /* Adds "..." if overflow occurs */
+    white-space: normal;  /* Allow multi-line text */
 }
 
 /* Responsive adjustments */
