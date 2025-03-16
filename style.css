@@ -84,5 +84,6 @@ ul li a {
 /* Hover effect */
 ul li a:hover {
     color: white;  /* Text turns white on hover */
-    transform: scale(1.1);  /* Slight scaling effect */
+    transform: scale(1.1); /* This will scale both text and background */
+    padding: 12px 17px; /* Increase padding slightly for better effect */
 }
