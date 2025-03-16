@@ -61,15 +61,15 @@ ul {
 
 ul li {
     list-style: none;
-    margin-left: 62px;
-    margin-bottom: 27px;
-    font-size: 14px;
+    margin-left: 65px;
+    margin-bottom: 30px;
+    font-size: 15px;
 }
 
 ul li a {
     text-decoration: none;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     font-weight: bold;
     transition: 0.4s ease-in-out;
 }
