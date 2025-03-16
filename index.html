@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Illustratinn</title>
     <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
-    <!-- Google Font Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
     <style>
         * {
             margin: 0;
@@ -108,8 +106,13 @@
             box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
             cursor: pointer;
         }
-
-        /* Responsive Design */
+        .button.clicked {
+            background: white !important;
+            color: blue !important;
+            font-size: 1.5rem;
+            padding: 20px 30px;
+            transition: all 0.3s ease-in-out;
+        }
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -131,6 +134,16 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll(".cta-buttons .button");
+            buttons.forEach(button => {
+                button.addEventListener("click", function() {
+                    this.classList.toggle("clicked");
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="home" class="background">
