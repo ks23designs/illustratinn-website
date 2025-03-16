@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Illustratinn</title>
     <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
-    <!-- Google Font Montserrat -->
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -17,7 +20,7 @@
         }
         body {
             background: url('assets/background_1.jpg') no-repeat center center/cover;
-            min-height: 100vh; /* Allows scrolling if content overflows */
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -50,11 +53,11 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: black !important; /* Ensures text stays visible */
-            font-size: 14px; /* Increased size of CTA menu text */
+            color: black !important;
+            font-size: 14px;
             font-weight: bold;
             background-color: #FED33D;
-            padding: 12px 18px; /* Slightly increased padding for better visibility */
+            padding: 12px 18px;
             border-radius: 20px;
             transition: 0.4s ease-in-out;
         }
@@ -69,7 +72,7 @@
             align-items: center;
             height: 80vh;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.3); /* Lighter overlay for readability */
+            background: rgba(0, 0, 0, 0.3);
         }
         h1 {
             font-size: 3rem;
@@ -78,7 +81,7 @@
         p {
             font-size: 1.2rem;
             max-width: 600px;
-            text-align: justify; /* Improved readability */
+            text-align: justify;
         }
         .cta-buttons {
             margin-top: 20px;
@@ -89,7 +92,7 @@
             padding: 15px 25px;
             margin: 10px;
             border-radius: 30px;
-            font-size: 1rem; /* Slightly larger CTA button text */
+            font-size: 1rem;
             color: black;
             font-weight: bold;
             text-decoration: none;
@@ -123,7 +126,7 @@
     </style>
 </head>
 <body>
-    <div id="home" class="background"> <!-- Added id="home" for proper navbar scrolling -->
+    <div id="home" class="background">
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
             <ul class="nav-links">
@@ -142,5 +145,31 @@
             </div>
         </div>
     </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I have a passion for turning ideas into visually compelling stories. With expertise in motion graphics, UI/UX, and branding, I create designs that not only look great but also engage audiences effectively.</p>
+        </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section id="work" class="work-section">
+        <h2>My Work</h2>
+        <div class="work-gallery">
+            <img src="assets/work1.jpg" alt="Project 1">
+            <img src="assets/work2.jpg" alt="Project 2">
+            <img src="assets/work3.jpg" alt="Project 3">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <p>Interested in collaborating? Reach out and let's create something amazing together!</p>
+        <a href="mailto:ks23.designs@gmail.com" class="contact-btn">Email Me</a>
+    </section>
+
 </body>
 </html>
