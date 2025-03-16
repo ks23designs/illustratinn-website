@@ -69,21 +69,25 @@ ul li {
     font-size: 15px;
 }
 
-/* Updated navigation link styles */
+/* Navigation link styles */
 ul li a {
     text-decoration: none;
-    color: black;  /* Updated text color inside the box */
+    color: black;
     font-family: Arial;
     font-weight: bold;
-    transition: 0.4s ease-in-out;
-    background-color: #FED33D;  /* Added yellow background */
-    padding: 10px 15px;  /* Added padding for button shape */
-    border-radius: 20px;  /* Added curved edges */
+    transition: all 0.3s ease-in-out;  /* Smooth transition */
+    background-color: #FED33D;  /* Default yellow */
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: inline-block;  /* Ensures proper scaling */
 }
 
-/* Hover effect */
+/* Hover effect: Changes text color, background, and size smoothly */
 ul li a:hover {
-    color: white;  /* Text turns white on hover */
-    transform: scale(1.1); /* This will scale both text and background */
-    padding: 12px 17px; /* Increase padding slightly for better effect */
+    color: white;  /* Change text to white */
+    background-color: #BC9A2E;  /* Darker yellow on hover */
+    transform: scale(1.1);  /* Scale up */
+    padding: 12px 17px;  /* Slightly increase padding */
+    transition: all 0.3s ease-in-out;  /* Ensures smooth hover effect */
 }
+
