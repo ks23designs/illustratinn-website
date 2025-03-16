@@ -17,7 +17,7 @@
         }
         body {
             background: url('assets/background_1.jpg') no-repeat center center/cover;
-            height: 100vh;
+            min-height: 100vh; /* Allows scrolling if content overflows */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,7 +27,7 @@
         }
         .background {
             width: 100%;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -50,7 +50,7 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: black;
+            color: black !important; /* Ensures text stays visible */
             font-size: 18px;
             font-weight: bold;
             background-color: #FED33D;
@@ -69,7 +69,7 @@
             align-items: center;
             height: 80vh;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.3); /* Lighter overlay for readability */
         }
         h1 {
             font-size: 3rem;
@@ -78,6 +78,7 @@
         p {
             font-size: 1.2rem;
             max-width: 600px;
+            text-align: justify; /* Improved readability */
         }
         .cta-buttons {
             margin-top: 20px;
@@ -97,10 +98,32 @@
         .cta-buttons a:hover {
             background: orange;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links a {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+            .container {
+                height: auto;
+                padding: 40px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="background">
+    <div id="home" class="background"> <!-- Added id="home" for proper navbar scrolling -->
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
             <ul class="nav-links">
@@ -112,7 +135,7 @@
         </nav>
         <div class="container">
             <h1>Bringing Imagination to Life with Art & Creativity</h1>
-             <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences. My work blends storytelling with design to create compelling visuals that inspire and captivate. The name "Illustratinn" comes from the idea of an "Inn"—a welcoming place where creativity and artistry come together. Explore my portfolio and let's create something extraordinary!</p>
+            <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences. My work blends storytelling with design to create compelling visuals that inspire and captivate. The name "Illustratinn" comes from the idea of an "Inn"—a welcoming place where creativity and artistry come together. Explore my portfolio and let's create something extraordinary!</p>
             <div class="cta-buttons">
                 <a href="#work">Explore My Work</a>
                 <a href="#contact">Let's Collaborate</a>
