@@ -66,14 +66,20 @@ ul li {
     font-size: 15px;
 }
 
+/* Updated navigation link styles */
 ul li a {
     text-decoration: none;
-    color: white;
+    color: black;  /* Updated text color inside the box */
     font-family: Arial;
     font-weight: bold;
     transition: 0.4s ease-in-out;
+    background-color: #FED33D;  /* Added yellow background */
+    padding: 10px 15px;  /* Added padding for button shape */
+    border-radius: 20px;  /* Added curved edges */
 }
 
+/* Hover effect */
 ul li a:hover {
-    color: rgb(161, 86, 1);
+    color: white;  /* Text turns white on hover */
+    transform: scale(1.1);  /* Slight scaling effect */
 }
