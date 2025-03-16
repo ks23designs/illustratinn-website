@@ -1,3 +1,6 @@
+/* Import Google Font Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 /* Reset styles */
 * {
     margin: 0;
@@ -12,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat globally */
 }
 
 /* Main container */
@@ -29,8 +33,8 @@ body {
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    top: 20px;  /* Equal spacing from top */
-    right: 20px; /* Equal spacing from right */
+    top: 20px;
+    right: 20px;
 }
 
 /* Logo styling */
@@ -52,7 +56,7 @@ body {
 .menu {
     width: auto;
     display: flex;
-    gap: 20px; /* Controls spacing between buttons */
+    gap: 20px;
 }
 
 ul {
@@ -73,22 +77,23 @@ ul li {
 ul li a {
     text-decoration: none;
     color: black;
-    font-family: Arial;
+    font-family: 'Montserrat', sans-serif; /* Changed from Arial */
     font-weight: bold;
-    background-color: #FED33D;  /* Default yellow */
+    background-color: #FED33D;
     padding: 10px 15px;
     border-radius: 20px;
-    display: inline-block;  /* Ensures proper scaling */
-    transition: all 0.3s ease-in-out;  /* Smooth transition */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* White outer glow */
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 /* Hover effect */
 ul li a:hover {
-    color: white;  /* Change text to white */
-    background-color: #BC9A2E;  /* Darker yellow */
-    transform: scale(1.1);  /* Scale up */
-    padding: 12px 17px;  /* Slightly increase padding */
-    box-shadow: none; /* Remove glow on hover */
-    transition: all 0.3s ease-in-out;  /* Ensures smooth hover effect */
+    color: white;
+    background-color: #BC9A2E;
+    transform: scale(1.1);
+    padding: 12px 17px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
 }
+
