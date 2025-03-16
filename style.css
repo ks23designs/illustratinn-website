@@ -75,19 +75,20 @@ ul li a {
     color: black;
     font-family: Arial;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;  /* Smooth transition */
     background-color: #FED33D;  /* Default yellow */
     padding: 10px 15px;
     border-radius: 20px;
     display: inline-block;  /* Ensures proper scaling */
+    transition: all 0.3s ease-in-out;  /* Smooth transition */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* White outer glow */
 }
 
-/* Hover effect: Changes text color, background, and size smoothly */
+/* Hover effect */
 ul li a:hover {
     color: white;  /* Change text to white */
-    background-color: #BC9A2E;  /* Darker yellow on hover */
+    background-color: #BC9A2E;  /* Darker yellow */
     transform: scale(1.1);  /* Scale up */
     padding: 12px 17px;  /* Slightly increase padding */
+    box-shadow: none; /* Remove glow on hover */
     transition: all 0.3s ease-in-out;  /* Ensures smooth hover effect */
 }
-
