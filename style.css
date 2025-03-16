@@ -98,8 +98,8 @@ ul li a:hover {
 
 /* ==== Added Fix: Subtext Styling for Exactly 3 Lines ==== */
 .container p {
-    max-width: 850px;
-    font-size: 18px;  /* Slightly increased for balance */
+    max-width: 1000px;
+    font-size: 10px;  /* Slightly increased for balance */
     line-height: 1.5;
     height: 4.5em;  /* 3 lines x 1.5 line-height */
     text-align: center;
