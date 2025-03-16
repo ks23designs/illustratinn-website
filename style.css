@@ -96,6 +96,18 @@ ul li a:hover {
     transition: all 0.3s ease-in-out;
 }
 
+/* ==== Added Fix: Subtext Styling for Exactly 3 Lines ==== */
+.container p {
+    max-width: 850px; /* Controls text width for wrapping */
+    font-size: 18px;  /* Adjusted for three-line text */
+    line-height: 1.6; /* Ensures proper spacing */
+    text-align: center; /* Centers text */
+    margin: 0 auto; /* Centers the paragraph */
+    display: block;
+    overflow: hidden; /* Prevents extra lines */
+    white-space: normal; /* Allows normal text wrapping */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .navbar {
@@ -115,5 +127,12 @@ ul li a:hover {
     ul li a {
         font-size: 14px;
         padding: 8px 12px;
+    }
+
+    /* Adjust subtext for mobile */
+    .container p {
+        max-width: 90%;
+        font-size: 16px;
+        line-height: 1.5;
     }
 }
