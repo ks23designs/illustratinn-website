@@ -35,8 +35,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
-            background-color: #121212;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            background: transparent;
         }
         .logo {
             width: 100px;
@@ -49,21 +48,21 @@
         .nav-links li {
             display: inline;
         }
-        .nav-links a, .cta-buttons .button {
+        .nav-links a {
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            background-color: transparent;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 20px;
-            transition: 0.4s ease-in-out;
-        }
-        .nav-links a:hover, .cta-buttons .button:hover, .nav-links a:focus, .cta-buttons .button:focus {
             background: #F5EC51;
             color: #000;
+            padding: 10px 15px;
             border-radius: 20px;
-            cursor: pointer;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-links a:hover, .nav-links a:focus {
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+            background: white;
+            color: #0F2072;
         }
         .container {
             display: flex;
@@ -89,15 +88,17 @@
             gap: 15px;
         }
         .cta-buttons .button {
-            background-color: #F5EC51;
+            background: #F5EC51;
             color: #000;
             padding: 10px 20px;
             border-radius: 20px;
-            transition: 0.3s;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease-in-out;
         }
         .cta-buttons .button:hover {
-            background-color: white;
+            background: white;
             color: #0F2072;
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
         }
         /* Responsive Design */
         @media (max-width: 768px) {
