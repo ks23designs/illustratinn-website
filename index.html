@@ -41,12 +41,21 @@
             flex-direction: column;
             position: relative;
             z-index: 2;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
         }
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10;
         }
         .logo {
             width: 100px;
@@ -80,13 +89,8 @@
             font-size: 1.2rem;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 800px;
         }
         h1 {
             font-size: 3rem;
@@ -117,25 +121,22 @@
                 font-size: 16px;
                 padding: 8px 12px;
             }
-            .container {
-                height: auto;
-                padding: 40px 20px;
-            }
         }
     </style>
 </head>
 <body>
     <canvas id="triangleCanvas"></canvas>
+    <nav>
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
     <div id="home" class="background">
-        <nav>
-            <img src="assets/logo.png" alt="Logo" class="logo">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
         <div class="container">
             <h1>Bringing Imagination to Life with Art & Creativity</h1>
             <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences...</p>
@@ -145,6 +146,37 @@
             </div>
         </div>
     </div>
+
+    <div id="about" class="background">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>I'm Kishan Singh, a passionate Senior Visual Designer with expertise in digital illustrations, UI/UX, and branding. My journey in design has been fueled by creativity and innovation.</p>
+            <div class="cta-buttons">
+                <a href="#work" class="button">See My Work</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="work" class="background">
+        <div class="container">
+            <h1>My Work</h1>
+            <p>Explore my portfolio featuring digital illustrations, branding projects, and UI/UX designs crafted for various industries.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="button">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="background">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>Want to collaborate? Reach out to me for design projects, freelance work, or creative discussions.</p>
+            <div class="cta-buttons">
+                <a href="mailto:kishan.singh@example.com" class="button">Email Me</a>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(button => {
             button.addEventListener("click", function() {
