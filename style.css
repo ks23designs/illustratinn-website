@@ -98,15 +98,19 @@ ul li a:hover {
 
 /* ==== Added Fix: Subtext Styling for Exactly 3 Lines ==== */
 .container p {
-    max-width: 850px; /* Controls text width for wrapping */
-    font-size: 18px;  /* Adjusted for three-line text */
-    line-height: 1.6; /* Ensures proper spacing */
-    text-align: center; /* Centers text */
-    margin: 0 auto; /* Centers the paragraph */
-    display: block;
-    overflow: hidden; /* Prevents extra lines */
-    white-space: normal; /* Allows normal text wrapping */
+    max-width: 850px; /* Restricts width to control line breaks */
+    font-size: 18px;  /* Adjusts text size for better spacing */
+    line-height: 1.4; /* Controls line height to fit within three lines */
+    text-align: center;
+    margin: 0 auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits text to three lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
