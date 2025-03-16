@@ -50,7 +50,9 @@
         }
         .nav-links {
             list-style: none;
-            display: contents;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 10px;
         }
         .nav-links a {
             text-decoration: none;
@@ -120,6 +122,12 @@
             .container {
                 height: auto;
                 padding: 40px 20px;
+            }
+            .nav-links {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                text-align: center;
             }
         }
     </style>
