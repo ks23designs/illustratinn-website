@@ -47,10 +47,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            position: relative;
         }
         .logo {
-            width: 80px;
+            width: 100px;
         }
         .nav-links {
             list-style: none;
@@ -75,12 +74,17 @@
             box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
             cursor: pointer;
         }
+        .nav-links a.active, .cta-buttons .button.active {
+            background: white;
+            color: blue;
+            font-size: 1.2rem;
+        }
         .container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: auto;
+            height: 80vh;
             padding: 20px;
             background: rgba(0, 0, 0, 0.3);
         }
@@ -92,14 +96,11 @@
             font-size: 1.2rem;
             max-width: 600px;
             text-align: justify;
-            padding: 10px;
         }
         .cta-buttons {
             margin-top: 20px;
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
         }
         @media (max-width: 768px) {
             h1 {
@@ -107,33 +108,18 @@
             }
             p {
                 font-size: 1rem;
-                padding: 15px;
             }
             .nav-links {
-                display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 10px;
-                background: rgba(0, 0, 0, 0.8);
-                padding: 10px;
-                border-radius: 10px;
-                width: 150px;
-                text-align: center;
+                gap: 10px;
             }
-            .nav-links.show {
-                display: flex;
+            .nav-links a {
+                font-size: 16px;
+                padding: 8px 12px;
             }
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                background: #FED33D;
-                padding: 10px;
-                border-radius: 5px;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .container {
+                height: auto;
+                padding: 40px 20px;
             }
         }
     </style>
@@ -143,7 +129,6 @@
     <div id="home" class="background">
         <nav>
             <img src="assets/logo.png" alt="Logo" class="logo">
-            <div class="menu-toggle">☰</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
@@ -161,9 +146,54 @@
         </div>
     </div>
     <script>
-        document.querySelector(".menu-toggle").addEventListener("click", function() {
-            document.querySelector(".nav-links").classList.toggle("show");
+        document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(button => {
+            button.addEventListener("click", function() {
+                document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+            });
         });
+
+        const canvas = document.getElementById("triangleCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let triangles = [];
+        function createTriangle() {
+            return {
+                x: canvas.width / 2,
+                y: canvas.height / 2,
+                size: Math.random() * 80 + 20,
+                speed: Math.random() * 3 + 1,
+                angle: Math.random() * 360,
+                opacity: 0.2
+            };
+        }
+        function updateTriangles() {
+            triangles.forEach((t, index) => {
+                t.x += t.speed * Math.cos(t.angle * Math.PI / 180);
+                t.y += t.speed * Math.sin(t.angle * Math.PI / 180);
+                if (t.x < 0 || t.x > canvas.width || t.y < 0 || t.y > canvas.height) {
+                    triangles[index] = createTriangle();
+                }
+            });
+        }
+        function drawTriangles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            triangles.forEach(t => {
+                ctx.beginPath();
+                ctx.moveTo(t.x, t.y - t.size);
+                ctx.lineTo(t.x + t.size, t.y + t.size);
+                ctx.lineTo(t.x - t.size, t.y + t.size);
+                ctx.closePath();
+                ctx.fillStyle = `rgba(255, 255, 255, ${t.opacity})`;
+                ctx.fill();
+            });
+            updateTriangles();
+            requestAnimationFrame(drawTriangles);
+        }
+        for (let i = 0; i < 50; i++) triangles.push(createTriangle());
+        drawTriangles();
     </script>
 </body>
 </html>
