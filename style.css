@@ -1,31 +1,119 @@
-body {
+/* Reset & Base */
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #fff;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #111;
-  padding: 1rem;
-  color: white;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fefefe;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #111;
+  padding: 1rem 2rem;
 }
 
-nav a {
-  color: white;
-  margin: 0 1rem;
+.nav-left .logo {
+  height: 40px;
+}
+
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-right li a {
+  color: #fefefe;
   text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-main {
+.nav-right li a:hover {
+  color: #facc15;
+}
+
+.nav-right li a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-right li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Grid Section */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
 }
 
-footer {
-  text-align: center;
+.grid-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.grid-item h3 {
   padding: 1rem;
-  background: #f2f2f2;
+  font-size: 1.1rem;
+  color: #111;
+  text-align: center;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
 }
