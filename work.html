@@ -3,36 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Work - Illustratinn</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <title>Work – Illustratinn</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Logo" class="logo" />
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="work.html">Work</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+    </div>
+    <ul class="nav-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <main>
+  <section class="hero">
     <h1>My Work</h1>
-    <section>
-      <h2>Kids PDFs</h2>
-      <ul>
-        <li><a href="assets/Kids PDF 1.pdf" target="_blank">View Kids PDF 1</a></li>
-        <li><a href="assets/Kids PDF 2.pdf" target="_blank">View Kids PDF 2</a></li>
-      </ul>
-    </section>
+    <p>Explore projects I’ve worked on – from motion graphics to design and illustrations.</p>
+  </section>
 
-    <!-- Add more project thumbnails or cards here -->
-  </main>
+  <section class="grid-container">
+    <div class="grid-item">
+      <img src="assets/background_1.jpg" alt="Project 1" />
+      <h3>Project Title</h3>
+    </div>
+    <div class="grid-item">
+      <img src="assets/background_1.jpg" alt="Project 2" />
+      <h3>Project Title</h3>
+    </div>
+    <div class="grid-item">
+      <img src="assets/background_1.jpg" alt="Project 3" />
+      <h3>Project Title</h3>
+    </div>
+    <!-- Add more grid-items as needed -->
+  </section>
 
   <footer>
-    <p>&copy; 2025 Illustratinn</p>
+    <p>&copy; 2025 Illustratinn. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
