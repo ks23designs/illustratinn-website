@@ -3,31 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Illustratinn – Portfolio</title>
-  <link rel="icon" href="assets/favicon.png" />
+  <title>Illustratinn — Kishan Kumar Singh</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-left">
-      <img src="assets/logo.png" alt="Logo" class="logo" />
-    </div>
-    <ul class="nav-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <header class="main-header">
+      <div class="logo">Illustratinn</div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <header class="hero">
-    <h1>Illustratinn</h1>
-    <p>Visual storytelling through design, animation, and illustration.</p>
-  </header>
+    <section class="hero-full">
+      <div class="hero-text">
+        <h1>Hello, I’m Kishan.</h1>
+        <p>A Visual Designer crafting clean, bold & playful stories through design and motion.</p>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Illustratinn. All rights reserved.</p>
-  </footer>
+    <section class="grid-showcase">
+      <a class="grid-item" href="#">
+        <img src="assets/work1.jpg" alt="Work 1">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="assets/work2.jpg" alt="Work 2">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="assets/work3.jpg" alt="Work 3">
+      </a>
+      <!-- Add more projects here -->
+    </section>
+
+    <footer class="main-footer">
+      <p>&copy; 2025 Kishan Kumar Singh. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
