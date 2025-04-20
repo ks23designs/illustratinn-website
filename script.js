@@ -1,3 +1,1 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Website Loaded!");
-});
+console.log("Welcome to Illustratinn!");
