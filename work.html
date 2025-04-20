@@ -1,199 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illustratinn</title>
-    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: url('assets/background_1.jpg') no-repeat center center/cover;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.2;
-        }
-        .background {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            z-index: 2;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px;
-        }
-        .logo {
-            width: 100px;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-        }
-        .nav-links a, .cta-buttons .button {
-            text-decoration: none;
-            text-shadow: 1px 1px 5px rgba(0.0, 0.0, 0.0, 0.3); /* Softer black shadow */
-            color: black;
-            font-size: 18px;
-            font-weight: bold;
-            background-color: #FED33D;
-            padding: 10px 15px;
-            border-radius: 20px;
-            transition: 0.4s ease-in-out;
-            border: 4px solid #d1d9e6;
-            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
-        }
-        .nav-links a:hover, .cta-buttons .button:hover {
-            background: black;
-            color: white;
-            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
-            cursor: pointer;
-        }
-        .nav-links a.active, .cta-buttons .button.active {
-            background: white;
-            color: blue;
-            font-size: 1.2rem;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            text-align: justify;
-        }
-        .cta-buttons {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-        }
-        @media (max-width: 700px) {
-            h1 {
-                font-size: 2rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .nav-links a {
-                font-size: 16px;
-                padding: 8px 12px;
-            }
-            .container {
-                height: auto;
-                padding: 40px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Work - Illustratinn</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
 </head>
 <body>
-    <canvas id="triangleCanvas"></canvas>
-    <div id="home" class="background">
-        <nav>
-            <img src="assets/logo.png" alt="Logo" class="logo">
-            <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
-        <div class="container">
-            <h1>Bringing Imagination to Life with Art & Creativity</h1>
-            <p>Hi, I'm Kishan Singh, a Senior Visual Designer specializing in crafting engaging illustrations and digital experiences...</p>
-            <div class="cta-buttons">
-                <a href="#work" class="button">Explore My Work</a>
-                <a href="#contact" class="button">Let's Collaborate</a>
-            </div>
-        </div>
-    </div>
-    <script>
-        document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(button => {
-            button.addEventListener("click", function() {
-                document.querySelectorAll(".cta-buttons .button, .nav-links a").forEach(btn => btn.classList.remove("active"));
-                this.classList.add("active");
-            });
-        });
+  <header>
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-        const canvas = document.getElementById("triangleCanvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+  <main>
+    <h1>My Work</h1>
+    <section>
+      <h2>Kids PDFs</h2>
+      <ul>
+        <li><a href="assets/Kids PDF 1.pdf" target="_blank">View Kids PDF 1</a></li>
+        <li><a href="assets/Kids PDF 2.pdf" target="_blank">View Kids PDF 2</a></li>
+      </ul>
+    </section>
 
-        let triangles = [];
-        function createTriangle() {
-            return {
-                x: canvas.width / 2,
-                y: canvas.height / 2,
-                size: Math.random() * 80 + 20,
-                speed: Math.random() * 3 + 1,
-                angle: Math.random() * 360,
-                opacity: 0.2
-            };
-        }
-        function updateTriangles() {
-            triangles.forEach((t, index) => {
-                t.x += t.speed * Math.cos(t.angle * Math.PI / 180);
-                t.y += t.speed * Math.sin(t.angle * Math.PI / 180);
-                if (t.x < 0 || t.x > canvas.width || t.y < 0 || t.y > canvas.height) {
-                    triangles[index] = createTriangle();
-                }
-            });
-        }
-        function drawTriangles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            triangles.forEach(t => {
-                ctx.beginPath();
-                ctx.moveTo(t.x, t.y - t.size);
-                ctx.lineTo(t.x + t.size, t.y + t.size);
-                ctx.lineTo(t.x - t.size, t.y + t.size);
-                ctx.closePath();
-                ctx.fillStyle = `rgba(255, 255, 255, ${t.opacity})`;
-                ctx.fill();
-            });
-            updateTriangles();
-            requestAnimationFrame(drawTriangles);
-        }
-        for (let i = 0; i < 50; i++) triangles.push(createTriangle());
-        drawTriangles();
-    </script>
+    <!-- Add more project thumbnails or cards here -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Illustratinn</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
